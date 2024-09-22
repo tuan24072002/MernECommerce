@@ -14,7 +14,7 @@ const categories = [
     { href: "/bags", name: "Bags", imageUrl: "/bags.jpg" },
 ];
 const HomePage = () => {
-    const { fetchFeaturedProducts, products, loading } = useProductStore();
+    const { fetchFeaturedProducts, featuredProducts, loading } = useProductStore();
     useEffect(() => {
         fetchFeaturedProducts();
     }, [fetchFeaturedProducts])
@@ -35,7 +35,7 @@ const HomePage = () => {
                     ))}
                 </div>
                 {
-                    products.length > 0 && <FeaturedProducts featuredProducts={products} />
+                    featuredProducts.length > 0 && <FeaturedProducts featuredProducts={featuredProducts} />
                 }
             </div>
         </div>
